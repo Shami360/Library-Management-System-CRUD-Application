@@ -47,8 +47,9 @@ function App() {
       setBooks(JSON.parse(savedBooks));
     } else {
       const dummyBooks = [
-        { id: 1, title: "Clean Code", author: "Robert C. Martin" },
-        { id: 2, title: "JavaScript Basics", author: "John Doe" }
+        { id: 1, title: "M EHTISHAM", author: "BSE-23S-028" },
+        { id: 2, title: "M FAISAL", author: "BSE-23S-027" },
+        { id: 2, title: "M JAMEE", author: "BSE-23S-056" }
       ];
       setBooks(dummyBooks);
       localStorage.setItem("books", JSON.stringify(dummyBooks));
