@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import BookForm from "./components/BookForm";
+import BookList from "./components/BookList";
+import "./App.css";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const [books, setBooks] = useState([]);
+
+
+useEffect(() => {
+  const dummyBooks = [
+    { id: 1, title: "Clean Code", author: "Robert C. Martin" },
+    { id: 2, title: "JavaScript Basics", author: "John Doe" },
+    { id: 3, title: "React Guide", author: "Facebook" }
+  ];
+
+  setBooks(dummyBooks);
+}, []);
+
+
+return (
+<div className="container">
+<h1>📚 Book Library</h1>
+<BookForm books={books} setBooks={setBooks} />
+<BookList books={books} setBooks={setBooks} />
+</div>
+);
 }
+
 
 export default App;
